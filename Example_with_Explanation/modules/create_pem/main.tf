@@ -11,4 +11,5 @@ resource "aws_key_pair" "pem_key" {
 resource "local_file" "peem_file" {
     content = tls_private_key.rsa.public_key_pem
     filename = var.key_path
+    file_permission = "0400"
 }

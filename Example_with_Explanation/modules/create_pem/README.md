@@ -1,8 +1,8 @@
 # create_pem module
 
-### main.tf
-
 * In this module we are creting the **pem** key which is used to login to the ec2 machine.
+
+### main.tf
 
 * Using **"tls_private_key"** resource block to generate cryptographic key pairs
 
