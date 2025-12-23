@@ -1,6 +1,6 @@
 # Typical Terraform Project Structure (Single Module)
 
-```text
+```css
 terraform-project/
 ├── main.tf
 ├── variables.tf
