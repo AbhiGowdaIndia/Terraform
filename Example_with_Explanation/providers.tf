@@ -1,6 +1,4 @@
 provider "aws"{
-    access_kry=""
-    secrete_key=""
     region=""
 }
 
