@@ -287,3 +287,86 @@
     └── prod/  
         └── terraform.tfstate  
     ```
+  * List workspaces
+
+  ```cmd
+  terraform workspace list
+  ```
+
+  * Create a workspace and switch to new workspace
+
+  ```cmd
+  terraform workspace new dev
+  ```
+
+  * Switch workspace
+
+  ```cmd
+  terraform workspace select prod
+  ```
+
+  * Show current workspace
+
+  ```cmd
+  terraform workspace show
+  ```
+
+  * Delete a workspace
+
+  ```cmd
+  terraform workspace delete qa
+  ```
+
+#### terraform import
+
+  * To bring existing infrastructure (created outside Terraform) under Terraform management without recreating it.
+
+  * “Tell Terraform: this resource already exists—start managing it.”
+
+  * Basic syntax
+ 
+  ```cmd
+  terraform import <resource_address> <resource_id>
+  ```
+
+  * Import the resource
+
+  ```cmd
+  terraform import aws_instance.web i-0a1b2c3d
+  ```
+
+#### terraform taint
+
+  * To mark a resource to destroy and recreate it on the next apply, even if no configuration change was made.
+
+  * Think of it as telling Terraform: “This resource is bad. Recreate it.”
+
+  * Basic syntax
+
+  ```cmd
+  terraform taint <resource_address>
+  ```
+
+  * Example:
+
+  ```cmd
+  terraform taint aws_instance.web
+  ```
+
+  * **terraform taint** is deprecated and replaced by **terraform apply -replace**.
+
+#### terraform untaint
+
+  * To remove the tainted mark from a resource in Terraform state.
+
+  ```cmd
+  terraform untaint aws_instance.web
+  ```
+
+  * terraform taint and terraform untaint are deprecated
+
+  * Preffered approch
+
+  ```cmd
+  terraform apply -replace=aws_instance.web
+  ```
