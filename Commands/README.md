@@ -212,4 +212,78 @@
   ```cmd
   terraform state show aws_instance.web
   ```
+#### terraform state
+
+  * To map your configuration to real-world infrastructure.
+
+  * Without state, Terraform cannot know what it created, what exists, or what to change.
+
+  * Lists all resources tracked in state.
+
+  ```cmd
+  terraform state list
+  ```
+
+  * Shows details of one resource.
+
+  ```cmd
+  terraform state show aws_instance.web
+  ```
+
+  * Moves resources inside the state file.
+
+    * Use cases:
+
+      * Renaming resources
+
+      * Moving resources into modules
+
+      * Refactoring without recreation
+
+  ```cmd
+  terraform state mv aws_instance.web aws_instance.app
+  ```
+
+  * Removes a resource from state only (does NOT delete infra).
+
+  ```cmd
+  terraform state rm aws_instance.web
+  ```
+
+  * Downloads remote state to stdout.
   
+  ```cmd
+  terraform state pull
+  ```
+
+  * Uploads a state file manually.
+
+  ```cmd
+  terraform state push terraform.tfstate
+  ```
+
+#### terraform workspace
+
+  * To manage multiple state files for the same Terraform configuration.
+
+  * They are commonly used to separate environments like dev, qa, staging, prod.
+
+  * A workspace is a named instance of a Terraform state.
+
+    * Same .tf code
+
+    * Different state files
+
+    * Different infrastructure per workspace
+
+  * Terraform stores states as:
+
+    ```text
+    terraform.tfstate.d/  
+    ├── dev/  
+    │   └── terraform.tfstate  
+    ├── qa/  
+    │   └── terraform.tfstate  
+    └── prod/  
+        └── terraform.tfstate  
+    ```
