@@ -18,7 +18,7 @@ Example_with_Explanation/
 │   │   ├── terraform.tfvars
 │   │   └── backend.tf
 │   ├── file_provisioner/
-│   │    ├── main.tf
+│   │    ├──main.tf
 │   │    └──variables.tf
 │   └── remote_exec
 │        ├── main.tf
@@ -47,4 +47,10 @@ Example_with_Explanation/
 
 * Ensures Terraform uses the specified provider version.
 
-* Backend configuration for remote state in S3
+* Backend configuration for remote state in S3.
+
+### provider.tf
+
+* Specified  and configure the provider
+
+### 
