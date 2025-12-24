@@ -51,6 +51,6 @@ Example_with_Explanation/
 
 ### provider.tf
 
-* Specified  and configure the provider
+* Specified and configured the provider
 
 ### 

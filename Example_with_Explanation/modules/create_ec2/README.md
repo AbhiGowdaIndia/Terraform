@@ -16,4 +16,4 @@ Here we creating the ec2 machine using the security gruoup and pem key created i
 
 ### outputs.tf
 
-* Create a output variable **public_ip** which is later used while login to the ec2 machine.
+* Create a output variable **public_ip** which is later used while login in to the ec2 machine.
